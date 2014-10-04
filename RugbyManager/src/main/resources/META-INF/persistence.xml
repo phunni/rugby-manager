@@ -8,6 +8,7 @@
 
  		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
  		<class>uk.co.redfruit.java.rugbymanager.data.Player</class>
+ 		<class>uk.co.redfruit.java.rugbymanager.data.Club</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
 		    <property name="javax.persistence.jdbc.url"	value="jdbc:sqlite:db/rugby-manager.db" />

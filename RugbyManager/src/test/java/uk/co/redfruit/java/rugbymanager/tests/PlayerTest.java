@@ -1,9 +1,7 @@
 package uk.co.redfruit.java.rugbymanager.tests;
 
-import static org.junit.Assert.*;
-
-import java.sql.Connection;
-import java.sql.Statement;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,8 +9,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import org.eclipse.persistence.sessions.Session;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -41,7 +39,7 @@ public class PlayerTest {
 	}
 	
 	@Test
-	public void test() {
+	public void testPlayer() {
 		Player testPlayer = (Player) manager.createQuery("select p from Player p where p.name='test-player'", Player.class).getSingleResult();
 		assertNotNull(testPlayer);
 		assertTrue("test-player".equals(testPlayer.getName()));
@@ -55,5 +53,10 @@ public class PlayerTest {
 		deleteTransaction.begin();
 		deleteQuery.executeUpdate();
 		deleteTransaction.commit();
+	}
+	
+	@AfterClass
+	public static void closeManager() {
+		manager.close();
 	}
 }

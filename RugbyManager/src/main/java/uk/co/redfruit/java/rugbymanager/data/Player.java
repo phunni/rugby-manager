@@ -3,6 +3,8 @@ package uk.co.redfruit.java.rugbymanager.data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -31,7 +33,17 @@ public class Player {
 	
 	private int agility;
 	
+	private int fitness;
+	
+	private boolean injured;
+	
+	private int weeksOutInjured;
+	
 	private String position;
+	
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "club", referencedColumnName = "id")
+	private Club club;
 
 	public int getId() {
 		return id;
@@ -127,6 +139,38 @@ public class Player {
 
 	public void setPosition(String position) {
 		this.position = position;
+	}
+
+	public Club getClub() {
+		return club;
+	}
+
+	public void setClub(Club club) {
+		this.club = club;
+	}
+
+	public int getFitness() {
+		return fitness;
+	}
+
+	public void setFitness(int fitness) {
+		this.fitness = fitness;
+	}
+
+	public boolean isInjured() {
+		return injured;
+	}
+
+	public void setInjured(boolean injured) {
+		this.injured = injured;
+	}
+
+	public int getWeeksOutInjured() {
+		return weeksOutInjured;
+	}
+
+	public void setWeeksOutInjured(int weeksOutInjured) {
+		this.weeksOutInjured = weeksOutInjured;
 	}
 	
 	
