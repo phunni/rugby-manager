@@ -1,4 +1,4 @@
-package uk.co.redfruit.java.rugbymanager.tests.game.utils;
+package uk.co.redfruit.java.rugbymanager.game.utils;
 
 import java.util.Random;
 
