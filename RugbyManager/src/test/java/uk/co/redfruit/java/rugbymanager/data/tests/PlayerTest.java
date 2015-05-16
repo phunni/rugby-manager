@@ -1,4 +1,4 @@
-package uk.co.redfruit.java.rugbymanager.tests;
+package uk.co.redfruit.java.rugbymanager.data.tests;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -40,7 +40,7 @@ public class PlayerTest {
 	
 	@Test
 	public void testPlayer() {
-		Player testPlayer = (Player) manager.createQuery("select p from Player p where p.name='test-player'", Player.class).getSingleResult();
+		Player testPlayer = manager.createQuery("select p from Player p where p.name='test-player'", Player.class).getSingleResult();
 		assertNotNull(testPlayer);
 		assertTrue("test-player".equals(testPlayer.getName()));
 		assertTrue(testPlayer.getSkill() == 20);

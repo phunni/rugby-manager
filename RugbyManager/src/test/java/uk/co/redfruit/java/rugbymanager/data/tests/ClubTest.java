@@ -1,4 +1,4 @@
-package uk.co.redfruit.java.rugbymanager.tests;
+package uk.co.redfruit.java.rugbymanager.data.tests;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
